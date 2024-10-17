@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #84fab0;
+    --pink: #e5b2ca;
+    --purple: #7028e4;
+    --dark: #333;
+    --darker: #222;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+    background-color: var(--dark);
+}
+
+#social {
+    width: 30px;
+    position: fixed;
+    top: 110px;
+    left: calc(50% - 720px - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#social img {
+    filter: invert(1);
+}
+
+.container {
+    max-width: 1920px;
+    margin: 20px auto;
+    padding: 0 30px;
+}
+
+.content {
+    max-width: 1440px;
+    min-width: 480px;
+    margin: 0 auto;
+}
+
+header, footer {
+    padding: 10px 0;
+    color: white;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+footer {
+    font-size: small;
+    padding: 15px 30px 0;
+    background-color: var(--darker);
+}
+
+header .content, footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    visibility: hidden;
+}
+
+nav a {
+    cursor: pointer;
+    color: white;
+    font-size: xx-large;
+    text-decoration: none;
+}
+
+.search-icon img {
+    color: white;
+}
+
+section {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* first row / article */
+section.first div:first-of-type {
+    grid-column:  1 / span 2;
+}
+section.first div:last-of-type {
+    grid-column:  3;
+}
+
+/* second row */
+section.second div.firstCol {
+    grid-column:  1;
+    display: grid;
+    gap: 10px;
+}
+section.second div.firstCol article {
+    aspect-ratio:  auto;
+}
+section.second div.firstCol h2 {
+    font-size: 1rem;
+}
+section.second div.secondCol {
+    grid-column:  2 / span 2;
+}
+
+/* banner */
+.static-banner {
+    background-image: linear-gradient(to bottom right, var(--pink), var(--purple));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8%;
+    border: solid 1px var(--dark);
+}
+.static-banner h2 {
+    color: white;
+    text-align: center;
+}
+
+/* articles */
+article {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    padding: 5% 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    pointer-events: none;
+    border: solid 1px var(--dark);
+    background-size: cover!important;
+    background-position: center!important;
+    background-color: black;
+}
+
+article:hover {
+    box-shadow: 3px 3px 6px rgba(204, 204, 204, .2);
+    border: solid 1px rgba(204, 204, 204, 1);
+    transition: 1s;
+}
+
+article.tech:hover {
+    border: solid 1px var(--purple);
+}
+
+article.travel:hover {
+    border: solid 1px var(--green);
+}
+
+article h2 a, .static-banner h2 a {
+    color: white;
+    text-decoration: none;
+}
+
+article a {
+    pointer-events: auto;
+}
+
+article .label {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+article .label a {
+    font-size: .7rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 10px;
+    color: var(--darker);
+    background-color: transparent;
+}
+
+article.travel .label {
+    background: var(--green);
+}
+
+article.tech .label {
+    background: var(--purple);
+}
+
+article .label.tech a {
+    color: white;
+}
+
+article .timestamp {
+    font-size: .65rem;
+    margin-top: .7rem;
+}
+
+article.article1 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../images/article1.jpg');
+}
+
+article.article2 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../images/article2.jpg');
+}
+
+article.article3 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../images/article3.jpg');
+}
+
+article.article4 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../images/article4.jpg');
+}
