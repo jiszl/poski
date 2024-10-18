@@ -10,9 +10,41 @@
     <meta name="robots" content="index, follow">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="./dist/style.css">
+    <script>
+        function logInfo() {
+            // get articles
+            let articles = document.getElementsByTagName('article');
+
+            // count average article's height & get headers length
+            let headersLength = 0;
+            let height = 0;
+            for (var i = 0; i < articles.length; i++) {
+                // add event listener
+                articles[i].addEventListener('click', function() {
+                    fillInfoObj(this);
+                });
+                height += articles[i].offsetHeight;
+           
+                // get h2 inside article & its length
+                let h2 = articles[i].getElementsByTagName('h2');
+                headersLength += h2.length > 0 ? h2[0].textContent.length : 0;
+            }
+            console.log("Počet článků: ", articles.length);
+            console.log("Průměrná výška článku: ", height/i,"px");
+            console.log("Součet délek nadpisů článků: ", headersLength, "znaků");
+            
+        }
+        function fillInfoObj(e) {
+            const article = {};
+            article.nadpis = e.getElementsByTagName('h2').length > 0 ? e.getElementsByTagName('h2')[0].innerText : "";
+            article.datum = e.getElementsByClassName('timestamp').length > 0 ? e.getElementsByClassName('timestamp')[0].innerText : 0;
+            article.delka = article.nadpis.length;
+            console.log(article);
+        }
+    </script>
 </head>
 
-<body>
+<body onload="logInfo()">
     
     <div class="container">
         <header>
