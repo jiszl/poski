@@ -6,6 +6,7 @@ Testovací úloha FE
 - fialový blok vpravo je neklikatelný prvek
 - jednotlivé články jsou klikatelné na nadpis a štítek (label), efekt po najetí pouze na tyto dva prvky, 
   samozřejmě možné předělat na celou plochu
+- použité obrázky zmenšené
 
 #JavaScript
 
